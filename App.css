@@ -1,35 +1,135 @@
+/* App.css */
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+  margin: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
-.container {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+.workspace {
+  display: flex; /* Side-by-side layout for toolbar and canvas */
+  gap: 20px; /* Space between toolbar and canvas */
 }
 
+.toolbar {
+  display: flex;
+  justify-content: center;  /* Center the buttons horizontally */
+  align-items: center;      /* Align the buttons vertically (if needed) */
+  flex-wrap: wrap;          /* Ensure buttons wrap to the next line if there’s not enough space */
+  gap: 10px;                /* Add space between the buttons */
+  margin: 20px;
+}
+
+
+.whiteboard {
+  border: 7px solid rgba(0, 255, 255, 0.7);
+  border-radius: 10px;
+}
+
+/* Color buttons */
+.color-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.color-button:hover {
+  box-shadow: 0 0 10px #fff;
+}
+.button {
+  background: #444;
+  border: none;
+  color: #fff;
+  padding: 15px;
+  margin: 10px;  /* This adds space around each button */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+/* Futuristic button style */
+.futuristic-button {
+  background: linear-gradient(135deg, #282828, #0f2027);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.futuristic-button:hover {
+  background: linear-gradient(135deg, #0ff, #0f2027);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+.futuristic-button:focus {
+  outline: none;
+}
+
+label {
+  color: #fff;
+  font-size: 1.1em;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Background upload input styling */
+.upload-label {
+  background: linear-gradient(135deg, #282828, #0f2027);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.2em;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.upload-label:hover {
+  background: linear-gradient(135deg, #0ff, #0f2027);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+/* Hide the file input itself */
+input[type="file"] {
+  display: none;
+}
+
+/* Text styling for labels of sliders */
+.slider-label {
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 0 0 5px #fff;
+}
+
+.slider {
+  width: 150px;
+}
 canvas {
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.8); /* Glowing effect */
+  transition: box-shadow 0.3s ease;
 }
 
-#clearBtn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+canvas:hover {
+  box-shadow: 0 0 30px 10px rgba(0, 255, 255, 1); /* Brighter glow on hover */
+}
+.glowing {
+  box-shadow: 0 0 30px 10px rgba(0, 255, 255, 1); /* Stronger glow */
+  transition: box-shadow 0.5s ease-in-out;
 }
 
-#clearBtn:hover {
-    background-color: #0056b3;
+.color-selection {
+  display: flex;
+  gap: 10px; /* Adds 10px space between each color button */
+  flex-wrap: wrap; /* If buttons overflow, they will wrap to the next line */
 }
